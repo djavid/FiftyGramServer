@@ -16,6 +16,9 @@
       <configuration process_explicitly_annotated="false">
         <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/java/fiftygram/config/WebConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/resources/database/Spring-DataSource.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/BeanConfiguration/Spring-Party.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/Spring-Module.xml</file>
         </fileset>
       </configuration>
     </facet>
@@ -46,5 +49,6 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:4.2.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:4.2.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.9" level="project" />
   </component>
 </module>
