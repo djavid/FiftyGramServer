@@ -20,7 +20,7 @@ public class JdbcPartyDAO implements PartyDAO {
     }
 
     public void insert(Party party) {
-        String sql = "INSERT INTO PARTY " + "(" +
+        String sql = "INSERT INTO Party " + "(" +
                 "id, " +
                 "OwnerId, " +
                 "Name, " +
