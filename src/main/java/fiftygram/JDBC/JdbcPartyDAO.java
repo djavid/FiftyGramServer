@@ -60,6 +60,7 @@ public class JdbcPartyDAO implements PartyDAO {
             ps.close();
 
         } catch (SQLException e) {
+            System.out.println(e.toString());
             throw new RuntimeException(e);
         } finally {
             if(conn != null) {
