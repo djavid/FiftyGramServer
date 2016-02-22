@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="FiftyGram:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="com.fiftygram.server-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="FiftyGram:war exploded" />
-    </root>
-  </artifact>
-</component>
