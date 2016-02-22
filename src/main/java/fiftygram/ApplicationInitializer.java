@@ -1,8 +1,6 @@
 package fiftygram;
 
 import fiftygram.config.WebConfig;
-import fiftygram.interfaces.PartyDAO;
-import fiftygram.model.Party;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;

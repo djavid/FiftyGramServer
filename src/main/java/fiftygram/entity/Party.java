@@ -2,32 +2,64 @@ package fiftygram.entity;
 
 
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.context.annotation.Bean;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 
 
-@Embeddable
+@Entity
+@Table(name = "Party")
 public class Party {
 
     //fields
-    private int id;
+
+    @Id
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name = "increment", strategy = "increment")
+    private long id;
+
+    @Column(name = "OwnerId", nullable = false)
     private int OwnerId;
+
+    @Column(name = "Name", nullable = false, length = 30)
     private String Name;
+
+    @Column(name = "Description", nullable = false, length = 180)
     private String Description;
+
+    @Column(name = "DateBegin", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date DateBegin;
+
+    @Column(name = "DateEnd", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date DateEnd;
+
+    @Column(name = "MaxGuests", nullable = false)
     private int MaxGuests;
+
+    @Column(name = "LocationCoordinatesHorizontal", nullable = false)
     private double LocationCoordinatesHorizontal;
+
+    @Column(name = "LocationCoordinatesVertical", nullable = false)
     private double LocationCoordinatesVertical;
+
+    @Column(name = "LocationAddress", nullable = false, length = 150)
     private String LocationAddress;
+
+    @Column(name = "AccessType", nullable = false, length = 20)
     private String AccessType;
+
+    @Column(name = "Type", nullable = false, length = 20)
     private String Type;
+
+    @Column(name = "Price", nullable = false)
     private int Price;
 
 
     //getters and setters
-    public int getId() {
+    public long getId() {
         return id;
     }
 
