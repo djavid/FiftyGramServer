@@ -1,9 +1,9 @@
 package fiftygram.repository;
 
-import fiftygram.entity.Party;
+import fiftygram.entity.Likes;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
-public interface PartyRepository extends JpaRepository<Party, Long> {
+public interface LikesRepository extends JpaRepository<Likes, Long> {
 }

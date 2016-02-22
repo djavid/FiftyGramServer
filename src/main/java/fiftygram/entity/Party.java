@@ -15,8 +15,8 @@ public class Party {
     //fields
 
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment", strategy = "increment")
+    @GenericGenerator(name = "inc", strategy = "increment")
+    @GeneratedValue(generator = "inc")
     private long id;
 
     @Column(name = "OwnerId", nullable = false)
@@ -165,7 +165,7 @@ public class Party {
 
 
     //constructor
-    public Party(int id, int OwnerId, String Name,
+    public Party(int OwnerId, String Name,
                  String Description, Date DateBegin,
                  Date DateEnd, int MaxGuests,
                  double LocationCoordinatesHorizontal,
@@ -173,7 +173,6 @@ public class Party {
                  String LocationAddress, String AccessType,
                  String Type, int Price) {
 
-        this.id = id;
         this.OwnerId = OwnerId;
         this.Name = Name;
         this.Description = Description;
