@@ -2,7 +2,6 @@ package fiftygram.entity;
 
 
 import org.hibernate.annotations.GenericGenerator;
-import org.springframework.context.annotation.Bean;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -20,7 +19,7 @@ public class Party {
     private long id;
 
     @Column(name = "OwnerId", nullable = false)
-    private int OwnerId;
+    private long OwnerId;
 
     @Column(name = "Name", nullable = false, length = 30)
     private String Name;
@@ -67,11 +66,11 @@ public class Party {
         this.id = id;
     }
 
-    public int getOwnerId() {
+    public long getOwnerId() {
         return OwnerId;
     }
 
-    public void setOwnerId(int ownerId) {
+    public void setOwnerId(long ownerId) {
         OwnerId = ownerId;
     }
 
@@ -165,7 +164,7 @@ public class Party {
 
 
     //constructor
-    public Party(int OwnerId, String Name,
+    public Party(long OwnerId, String Name,
                  String Description, Date DateBegin,
                  Date DateEnd, int MaxGuests,
                  double LocationCoordinatesHorizontal,
