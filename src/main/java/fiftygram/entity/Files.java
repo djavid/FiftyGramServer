@@ -12,54 +12,54 @@ public class Files {
     @GeneratedValue(generator = "inc")
     private long id;
 
-    @Column(name = "UserId", nullable = false)
-    private long UserId;
+    @Column(name = "userId", nullable = false)
+    private long userId;
 
-    @Column(name = "PartyId", nullable = false)
-    private long PartyId;
+    @Column(name = "partyId", nullable = false)
+    private long partyId;
 
-    @Column(name = "Source", nullable = false, length = 100)
-    private String Source;
+    @Column(name = "source", nullable = false, length = 100)
+    private String source;
 
-    @Column(name = "Type", nullable = false, length = 15)
-    private String Type;
+    @Column(name = "type", nullable = false, length = 15)
+    private String type;
 
-    @Column(name = "Date",  columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(name = "date",  columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date Date;
+    private Date date;
 
 
     //getters and setters
     public String getType() {
-        return Type;
+        return type;
     }
 
     public void setType(String type) {
-        Type = type;
+        this.type = type;
     }
 
     public String getSource() {
-        return Source;
+        return source;
     }
 
     public void setSource(String source) {
-        Source = source;
+        this.source = source;
     }
 
     public long getPartyId() {
-        return PartyId;
+        return partyId;
     }
 
     public void setPartyId(long partyId) {
-        PartyId = partyId;
+        this.partyId = partyId;
     }
 
     public long getUserId() {
-        return UserId;
+        return userId;
     }
 
     public void setUserId(long userId) {
-        UserId = userId;
+        this.userId = userId;
     }
 
     public long getId() {
@@ -70,18 +70,18 @@ public class Files {
         this.id = id;
     }
 
-    public Date getDate() { return Date; }
+    public Date getDate() { return date; }
 
-    public void setDate(Date date) { Date = date; }
+    public void setDate(Date date) { this.date = date; }
 
 
     //constructor
     public Files(long UserId, long PartyId, String Type, String source, Date date) {
-        this.PartyId = PartyId;
-        this.UserId = UserId;
-        this.Type = Type;
-        this.Source = source;
-        this.Date = date;
+        this.partyId = PartyId;
+        this.userId = UserId;
+        this.type = Type;
+        this.source = source;
+        this.date = date;
     }
 
     public Files() {

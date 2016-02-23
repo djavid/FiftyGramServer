@@ -15,15 +15,15 @@ public class Guests {
     @GeneratedValue(generator = "inc")
     private long id;
 
-    @Column(name = "UserId", nullable = false)
-    private long UserId;
+    @Column(name = "userId", nullable = false)
+    private long userId;
 
-    @Column(name = "PartyId", nullable = false)
-    private long PartyId;
+    @Column(name = "partyId", nullable = false)
+    private long partyId;
 
-    @Column(name = "Date",  columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(name = "date",  columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date Date;
+    private Date date;
 
 
     //getters and setters
@@ -33,28 +33,28 @@ public class Guests {
     public void setId(long id) { this.id = id; }
 
     public long getUserId() {
-        return UserId;
+        return userId;
     }
     public void setUserId(long userId) {
-        UserId = userId;
+        this.userId = userId;
     }
 
     public long getPartyId() {
-        return PartyId;
+        return partyId;
     }
     public void setPartyId(long partyId) {
-        PartyId = partyId;
+        this.partyId = partyId;
     }
 
-    public Date getDate() { return Date; }
-    public void setDate(Date date) { Date = date; }
+    public Date getDate() { return date; }
+    public void setDate(Date date) { this.date = date; }
 
 
     //constructors
     public Guests(long userId, long partyId, java.util.Date date) {
-        UserId = userId;
-        PartyId = partyId;
-        Date = date;
+        this.userId = userId;
+        this.partyId = partyId;
+        this.date = date;
     }
 
     public Guests() {

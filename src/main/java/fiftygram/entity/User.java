@@ -18,16 +18,19 @@ public class User {
     @Column(name = "login", nullable = false, length = 30)
     private String login;
 
-    @Column(name = "FullName", nullable = false, length = 30)
-    private String FullName;
+    @Column(name = "fullName", nullable = false, length = 30)
+    private String fullName;
 
-    @Column(name = "PhoneNumber", nullable = false, length = 15)
-    private String PhoneNumber;
+    @Column(name = "phoneNumber", nullable = false, length = 15)
+    private String phoneNumber;
+
+    @Column(name = "email", nullable = false, length = 30)
+    private String email;
 
     @Column(name = "password", nullable = false, length = 20)
     private String password;
 
-    @Column(name = "registered", nullable = false)
+    @Column(name = "registered",  columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     @Temporal(TemporalType.TIMESTAMP)
     private Date registered;
 
@@ -48,17 +51,17 @@ public class User {
     }
 
     public String getFullName() {
-        return FullName;
+        return fullName;
     }
     public void setFullName(String fullName) {
-        FullName = fullName;
+        this.fullName = fullName;
     }
 
     public String getPhoneNumber() {
-        return PhoneNumber;
+        return phoneNumber;
     }
     public void setPhoneNumber(String phoneNumber) {
-        PhoneNumber = phoneNumber;
+        this.phoneNumber = phoneNumber;
     }
 
     public String getPassword() {
@@ -71,14 +74,18 @@ public class User {
     public Date getRegistered() { return registered; }
     public void setRegistered(Date registered) { this.registered = registered; }
 
-    //constructor
-    public User(String login, String FullName,
-                String PhoneNumber, String password) {
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
 
+
+    //constructor
+    public User(String login, String fullName, String phoneNumber, String email, String password, Date registered) {
         this.login = login;
-        this.FullName = FullName;
-        this.PhoneNumber = PhoneNumber;
+        this.fullName = fullName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
         this.password = password;
+        this.registered = registered;
     }
 
     public User() {

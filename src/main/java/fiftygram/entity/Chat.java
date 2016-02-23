@@ -13,18 +13,18 @@ public class Chat {
     @GeneratedValue(generator = "inc")
     private long id;
 
-    @Column(name = "UserId", nullable = false)
-    private long UserId;
+    @Column(name = "userId", nullable = false)
+    private long userId;
 
-    @Column(name = "PartyId", nullable = false)
-    private long PartyId;
+    @Column(name = "partyId", nullable = false)
+    private long partyId;
 
-    @Column(name = "Text", nullable = false, length = 150)
-    private String Text;
+    @Column(name = "text", nullable = false, length = 150)
+    private String text;
 
-    @Column(name = "Date",  columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(name = "date",  columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date Date;
+    private Date date;
 
 
     //getters and setters
@@ -37,45 +37,45 @@ public class Chat {
     }
 
     public long getUserId() {
-        return UserId;
+        return userId;
     }
 
     public void setUserId(long userId) {
-        UserId = userId;
+        this.userId = userId;
     }
 
     public long getPartyId() {
-        return PartyId;
+        return partyId;
     }
 
     public void setPartyId(long partyId) {
-        PartyId = partyId;
+        this.partyId = partyId;
     }
 
     public String getText() {
-        return Text;
+        return text;
     }
 
     public void setText(String text) {
-        Text = text;
+        this.text = text;
     }
 
     public Date getDate() {
-        return Date;
+        return date;
     }
 
     public void setDate(Date date) {
-        Date = date;
+        this.date = date;
     }
 
 
     //constructor
     public Chat(long UserId, long PartyId, String Text, Date date) {
 
-        this.UserId = UserId;
-        this.PartyId = PartyId;
-        this.Text = Text;
-        this.Date = date;
+        this.userId = UserId;
+        this.partyId = PartyId;
+        this.text = Text;
+        this.date = date;
     }
 
     public Chat(){

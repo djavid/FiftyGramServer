@@ -15,15 +15,15 @@ public class Followers {
     @GeneratedValue(generator = "inc")
     private long id;
 
-    @Column(name = "FollowId", nullable = false)
-    private long FollowId;
+    @Column(name = "followId", nullable = false)
+    private long followId;
 
-    @Column(name = "FollowerId", nullable = false)
-    private long FollowerId;
+    @Column(name = "followerId", nullable = false)
+    private long followerId;
 
-    @Column(name = "Date",  columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(name = "date",  columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date Date;
+    private Date date;
 
 
     //getters and setters
@@ -35,28 +35,28 @@ public class Followers {
     }
 
     public long getFollowId() {
-        return FollowId;
+        return followId;
     }
     public void setFollowId(long followId) {
-        FollowId = followId;
+        this.followId = followId;
     }
 
     public long getFollowerId() {
-        return FollowerId;
+        return followerId;
     }
     public void setFollowerId(long followerId) {
-        FollowerId = followerId;
+        this.followerId = followerId;
     }
 
-    public Date getDate() { return Date; }
-    public void setDate(Date date) { Date = date; }
+    public Date getDate() { return date; }
+    public void setDate(Date date) { this.date = date; }
 
 
     //constructor
     public Followers(long followId, long followerId, Date date) {
-        FollowId = followId;
-        FollowerId = followerId;
-        Date = date;
+        this.followId = followId;
+        this.followerId = followerId;
+        this.date = date;
     }
 
     public Followers() {

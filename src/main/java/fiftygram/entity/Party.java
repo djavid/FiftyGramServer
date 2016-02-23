@@ -17,43 +17,43 @@ public class Party {
     @GeneratedValue(generator = "inc")
     private long id;
 
-    @Column(name = "OwnerId", nullable = false)
-    private long OwnerId;
+    @Column(name = "ownerId", nullable = false)
+    private long ownerId;
 
-    @Column(name = "Name", nullable = false, length = 30)
-    private String Name;
+    @Column(name = "name", nullable = false, length = 30)
+    private String name;
 
-    @Column(name = "Description", nullable = false, length = 180)
-    private String Description;
+    @Column(name = "description", nullable = false, length = 500)
+    private String description;
 
-    @Column(name = "DateBegin", nullable = false)
+    @Column(name = "dateBegin", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    private Date DateBegin;
+    private Date dateBegin;
 
-    @Column(name = "DateEnd", nullable = false)
+    @Column(name = "dateEnd", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    private Date DateEnd;
+    private Date dateEnd;
 
-    @Column(name = "MaxGuests", nullable = false)
-    private int MaxGuests;
+    @Column(name = "maxGuests", nullable = false)
+    private int maxGuests;
 
-    @Column(name = "LocationCoordinatesHorizontal", nullable = false)
-    private double LocationCoordinatesHorizontal;
+    @Column(name = "locationCoordinatesHorizontal", nullable = false)
+    private double locationCoordinatesHorizontal;
 
-    @Column(name = "LocationCoordinatesVertical", nullable = false)
-    private double LocationCoordinatesVertical;
+    @Column(name = "locationCoordinatesVertical", nullable = false)
+    private double locationCoordinatesVertical;
 
-    @Column(name = "LocationAddress", nullable = false, length = 150)
-    private String LocationAddress;
+    @Column(name = "locationAddress", nullable = false, length = 150)
+    private String locationAddress;
 
-    @Column(name = "AccessType", nullable = false, length = 20)
-    private String AccessType;
+    @Column(name = "accessType", nullable = false, length = 20)
+    private String accessType;
 
-    @Column(name = "Type", nullable = false, length = 20)
-    private String Type;
+    @Column(name = "type", nullable = false, length = 20)
+    private String type;
 
-    @Column(name = "Price", nullable = false)
-    private int Price;
+    @Column(name = "price", nullable = false)
+    private int price;
 
     @Column(name = "created",  columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     @Temporal(TemporalType.TIMESTAMP)
@@ -69,87 +69,87 @@ public class Party {
     }
 
     public long getOwnerId() {
-        return OwnerId;
+        return ownerId;
     }
     public void setOwnerId(long ownerId) {
-        OwnerId = ownerId;
+        ownerId = ownerId;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public Date getDateBegin() {
-        return DateBegin;
+        return dateBegin;
     }
     public void setDateBegin(Date dateBegin) {
-        DateBegin = dateBegin;
+        dateBegin = dateBegin;
     }
 
     public Date getDateEnd() {
-        return DateEnd;
+        return dateEnd;
     }
     public void setDateEnd(Date dateEnd) {
-        DateEnd = dateEnd;
+        this.dateEnd = dateEnd;
     }
 
     public double getLocationCoordinatesVertical() {
-        return LocationCoordinatesVertical;
+        return locationCoordinatesVertical;
     }
     public void setLocationCoordinatesVertical(double locationCoordinatesVertical) {
-        LocationCoordinatesVertical = locationCoordinatesVertical;
+        this.locationCoordinatesVertical = locationCoordinatesVertical;
     }
 
     public String getType() {
-        return Type;
+        return type;
     }
     public void setType(String type) {
-        Type = type;
+        this.type = type;
     }
 
     public int getPrice() {
-        return Price;
+        return price;
     }
     public void setPrice(int price) {
-        Price = price;
+        this.price = price;
     }
 
     public String getAccessType() {
-        return AccessType;
+        return accessType;
     }
     public void setAccessType(String accessType) {
-        AccessType = accessType;
+        this.accessType = accessType;
     }
 
     public String getLocationAddress() {
-        return LocationAddress;
+        return locationAddress;
     }
     public void setLocationAddress(String locationAddress) {
-        LocationAddress = locationAddress;
+        this.locationAddress = locationAddress;
     }
 
     public double getLocationCoordinatesHorizontal() {
-        return LocationCoordinatesHorizontal;
+        return locationCoordinatesHorizontal;
     }
     public void setLocationCoordinatesHorizontal(double locationCoordinatesHorizontal) {
-        LocationCoordinatesHorizontal = locationCoordinatesHorizontal;
+        this.locationCoordinatesHorizontal = locationCoordinatesHorizontal;
     }
 
     public int getMaxGuests() {
-        return MaxGuests;
+        return maxGuests;
     }
     public void setMaxGuests(int maxGuests) {
-        MaxGuests = maxGuests;
+        this.maxGuests = maxGuests;
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
     public void setDescription(String description) {
-        Description = description;
+        this.description = description;
     }
 
     public Date getCreated() { return created; }
@@ -165,18 +165,18 @@ public class Party {
                  String LocationAddress, String AccessType,
                  String Type, int Price) {
 
-        this.OwnerId = OwnerId;
-        this.Name = Name;
-        this.Description = Description;
-        this.DateBegin = DateBegin;
-        this.DateEnd = DateEnd;
-        this.MaxGuests = MaxGuests;
-        this.LocationCoordinatesHorizontal = LocationCoordinatesHorizontal;
-        this.LocationCoordinatesVertical = LocationCoordinatesVertical;
-        this.LocationAddress = LocationAddress;
-        this.AccessType = AccessType;
-        this.Type = Type;
-        this.Price = Price;
+        this.ownerId = OwnerId;
+        this.name = Name;
+        this.description = Description;
+        this.dateBegin = DateBegin;
+        this.dateEnd = DateEnd;
+        this.maxGuests = MaxGuests;
+        this.locationCoordinatesHorizontal = LocationCoordinatesHorizontal;
+        this.locationCoordinatesVertical = LocationCoordinatesVertical;
+        this.locationAddress = LocationAddress;
+        this.accessType = AccessType;
+        this.type = Type;
+        this.price = Price;
     }
 
     public Party() {
