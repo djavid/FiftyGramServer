@@ -1,15 +1,14 @@
 package fiftygram.entity;
 
 import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
+import java.util.Date;
 
-/**
- * Created by mikhailarzumanov on 23.02.16.
- */
+
 @Entity
 @Table(name = "Comments")
 public class Comments {
+
     @Id
     @GenericGenerator(name = "inc", strategy = "increment")
     @GeneratedValue(generator = "inc")
@@ -26,14 +25,15 @@ public class Comments {
 
     @Column(name = "Date",  columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     @Temporal(TemporalType.TIMESTAMP)
-    private java.util.Date Date;
+    private Date Date;
 
-//getters and setters
-    public java.util.Date getDate() {
+
+    //getters and setters
+    public Date getDate() {
         return Date;
     }
 
-    public void setDate(java.util.Date date) {
+    public void setDate(Date date) {
         Date = date;
     }
 
@@ -68,8 +68,10 @@ public class Comments {
     public void setId(long id) {
         this.id = id;
     }
+
+
     //constructor
-    public Comments(long UserId, long PartyId, String Text, java.util.Date date) {
+    public Comments(long UserId, long PartyId, String Text, Date date) {
 
         this.UserId = UserId;
         this.PartyId = PartyId;

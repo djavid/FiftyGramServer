@@ -2,11 +2,14 @@ package fiftygram.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
+import java.util.Date;
 
 
 @Entity
 @Table(name = "Followers")
 public class Followers {
+
+    //fields
     @Id
     @GenericGenerator(name = "inc", strategy = "increment")
     @GeneratedValue(generator = "inc")
@@ -18,11 +21,15 @@ public class Followers {
     @Column(name = "FollowerId", nullable = false)
     private long FollowerId;
 
+    @Column(name = "Date",  columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date Date;
 
+
+    //getters and setters
     public long getId() {
         return id;
     }
-
     public void setId(long id) {
         this.id = id;
     }
@@ -30,7 +37,6 @@ public class Followers {
     public long getFollowId() {
         return FollowId;
     }
-
     public void setFollowId(long followId) {
         FollowId = followId;
     }
@@ -38,15 +44,19 @@ public class Followers {
     public long getFollowerId() {
         return FollowerId;
     }
-
     public void setFollowerId(long followerId) {
         FollowerId = followerId;
     }
 
+    public Date getDate() { return Date; }
+    public void setDate(Date date) { Date = date; }
 
-    public Followers(long followId, long followerId) {
+
+    //constructor
+    public Followers(long followId, long followerId, Date date) {
         FollowId = followId;
         FollowerId = followerId;
+        Date = date;
     }
 
     public Followers() {

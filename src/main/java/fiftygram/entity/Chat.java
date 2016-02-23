@@ -1,13 +1,8 @@
 package fiftygram.entity;
 
 import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 import java.util.Date;
-
-/**
- * Created by mikhailarzumanov on 23.02.16.
- */
 
 
 @Entity
@@ -30,6 +25,7 @@ public class Chat {
     @Column(name = "Date",  columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     @Temporal(TemporalType.TIMESTAMP)
     private Date Date;
+
 
     //getters and setters
     public long getId() {
@@ -64,11 +60,11 @@ public class Chat {
         Text = text;
     }
 
-    public java.util.Date getDate() {
+    public Date getDate() {
         return Date;
     }
 
-    public void setDate(java.util.Date date) {
+    public void setDate(Date date) {
         Date = date;
     }
 

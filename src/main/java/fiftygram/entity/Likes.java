@@ -2,11 +2,14 @@ package fiftygram.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
+import java.util.Date;
 
 
 @Entity
 @Table(name = "Likes")
 public class Likes {
+
+    //fields
     @Id
     @GenericGenerator(name = "inc", strategy = "increment")
     @GeneratedValue(generator = "inc")
@@ -18,11 +21,13 @@ public class Likes {
     @Column(name = "PartyId", nullable = false)
     private long PartyId;
 
+    @Column(name = "Date",  columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date Date;
 
-    public long getId() {
-        return id;
-    }
 
+    //getters and setters
+    public long getId() { return id; }
     public void setId(long id) {
         this.id = id;
     }
@@ -30,7 +35,6 @@ public class Likes {
     public long getUserId() {
         return UserId;
     }
-
     public void setUserId(long userId) {
         UserId = userId;
     }
@@ -38,15 +42,19 @@ public class Likes {
     public long getPartyId() {
         return PartyId;
     }
-
     public void setPartyId(long partyId) {
         PartyId = partyId;
     }
 
+    public Date getDate() { return Date; }
+    public void setDate(Date date) { Date = date; }
 
-    public Likes(long userId, long partyId) {
+
+    //constructors
+    public Likes(long userId, long partyId, Date date) {
         UserId = userId;
         PartyId = partyId;
+        Date = date;
     }
 
     public Likes() {

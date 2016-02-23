@@ -1,10 +1,8 @@
 package fiftygram.entity;
 
 import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
-
-
+import java.util.Date;
 
 @Entity
 @Table(name = "Files")
@@ -25,6 +23,11 @@ public class Files {
 
     @Column(name = "Type", nullable = false, length = 15)
     private String Type;
+
+    @Column(name = "Date",  columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date Date;
+
 
     //getters and setters
     public String getType() {
@@ -67,12 +70,18 @@ public class Files {
         this.id = id;
     }
 
+    public Date getDate() { return Date; }
+
+    public void setDate(Date date) { Date = date; }
+
+
     //constructor
-    public Files(long UserId,long PartyId,String Type, String source) {
+    public Files(long UserId, long PartyId, String Type, String source, Date date) {
         this.PartyId = PartyId;
         this.UserId = UserId;
         this.Type = Type;
         this.Source = source;
+        this.Date = date;
     }
 
     public Files() {

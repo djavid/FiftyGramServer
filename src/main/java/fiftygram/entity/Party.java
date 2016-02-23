@@ -12,7 +12,6 @@ import java.util.Date;
 public class Party {
 
     //fields
-
     @Id
     @GenericGenerator(name = "inc", strategy = "increment")
     @GeneratedValue(generator = "inc")
@@ -56,12 +55,15 @@ public class Party {
     @Column(name = "Price", nullable = false)
     private int Price;
 
+    @Column(name = "created",  columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date created;
+
 
     //getters and setters
     public long getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
@@ -69,7 +71,6 @@ public class Party {
     public long getOwnerId() {
         return OwnerId;
     }
-
     public void setOwnerId(long ownerId) {
         OwnerId = ownerId;
     }
@@ -77,7 +78,6 @@ public class Party {
     public String getName() {
         return Name;
     }
-
     public void setName(String name) {
         Name = name;
     }
@@ -85,7 +85,6 @@ public class Party {
     public Date getDateBegin() {
         return DateBegin;
     }
-
     public void setDateBegin(Date dateBegin) {
         DateBegin = dateBegin;
     }
@@ -93,7 +92,6 @@ public class Party {
     public Date getDateEnd() {
         return DateEnd;
     }
-
     public void setDateEnd(Date dateEnd) {
         DateEnd = dateEnd;
     }
@@ -101,7 +99,6 @@ public class Party {
     public double getLocationCoordinatesVertical() {
         return LocationCoordinatesVertical;
     }
-
     public void setLocationCoordinatesVertical(double locationCoordinatesVertical) {
         LocationCoordinatesVertical = locationCoordinatesVertical;
     }
@@ -109,7 +106,6 @@ public class Party {
     public String getType() {
         return Type;
     }
-
     public void setType(String type) {
         Type = type;
     }
@@ -117,7 +113,6 @@ public class Party {
     public int getPrice() {
         return Price;
     }
-
     public void setPrice(int price) {
         Price = price;
     }
@@ -125,7 +120,6 @@ public class Party {
     public String getAccessType() {
         return AccessType;
     }
-
     public void setAccessType(String accessType) {
         AccessType = accessType;
     }
@@ -133,7 +127,6 @@ public class Party {
     public String getLocationAddress() {
         return LocationAddress;
     }
-
     public void setLocationAddress(String locationAddress) {
         LocationAddress = locationAddress;
     }
@@ -141,7 +134,6 @@ public class Party {
     public double getLocationCoordinatesHorizontal() {
         return LocationCoordinatesHorizontal;
     }
-
     public void setLocationCoordinatesHorizontal(double locationCoordinatesHorizontal) {
         LocationCoordinatesHorizontal = locationCoordinatesHorizontal;
     }
@@ -149,7 +141,6 @@ public class Party {
     public int getMaxGuests() {
         return MaxGuests;
     }
-
     public void setMaxGuests(int maxGuests) {
         MaxGuests = maxGuests;
     }
@@ -157,13 +148,15 @@ public class Party {
     public String getDescription() {
         return Description;
     }
-
     public void setDescription(String description) {
         Description = description;
     }
 
+    public Date getCreated() { return created; }
+    public void setCreated(Date created) { this.created = created; }
 
-    //constructor
+
+    //constructors
     public Party(long OwnerId, String Name,
                  String Description, Date DateBegin,
                  Date DateEnd, int MaxGuests,

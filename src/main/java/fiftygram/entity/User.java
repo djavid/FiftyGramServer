@@ -2,17 +2,14 @@ package fiftygram.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
+import java.util.Date;
 
-/**
- * Created by mikhailarzumanov on 23.02.16.
- */
 
 @Entity
 @Table(name = "User")
 public class User {
 
     //fields
-
     @Id
     @GenericGenerator(name = "inc", strategy = "increment")
     @GeneratedValue(generator = "inc")
@@ -30,21 +27,22 @@ public class User {
     @Column(name = "password", nullable = false, length = 20)
     private String password;
 
-    //getters and setters
+    @Column(name = "registered", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date registered;
 
+
+    //getters and setters
     public long getId() {
         return id;
     }
-
     public void setId(long id) {
         this.id = id;
     }
 
-
     public String getLogin() {
         return login;
     }
-
     public void setLogin(String login) {
         this.login = login;
     }
@@ -52,7 +50,6 @@ public class User {
     public String getFullName() {
         return FullName;
     }
-
     public void setFullName(String fullName) {
         FullName = fullName;
     }
@@ -60,7 +57,6 @@ public class User {
     public String getPhoneNumber() {
         return PhoneNumber;
     }
-
     public void setPhoneNumber(String phoneNumber) {
         PhoneNumber = phoneNumber;
     }
@@ -68,11 +64,12 @@ public class User {
     public String getPassword() {
         return password;
     }
-
     public void setPassword(String password) {
         this.password = password;
     }
 
+    public Date getRegistered() { return registered; }
+    public void setRegistered(Date registered) { this.registered = registered; }
 
     //constructor
     public User(String login, String FullName,
