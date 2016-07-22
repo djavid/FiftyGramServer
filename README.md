@@ -21,10 +21,10 @@ FiftyGram server for iOS and Android clients
 - **/likes/delete/{id}** - remove Like by its id (GET)<br />
 
 ### Guest
-- **/guests/get/partyid/{id}** - get Guest with specified Party id (GET)
+- **/guests/get/partyid/{id}** - get Guests for the Party with specified id (GET)
 
 ### Comment
-- **/comment/get/partyid/{id}** - get Comment with specified Party id (GET)
+- **/comment/get/partyid/{id}** - get Comments for the Party with specified id (GET)
 
 ### User
 - **/user/get/all** - get all Users (GET)
