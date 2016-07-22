@@ -14,7 +14,7 @@ FiftyGram server for iOS and Android clients
 
 ### Like
 - **/likes/get/all** - get all Likes (GET)
-- **/likes/get/partyid/{id}** - get Like with specified Party id (GET)
+- **/likes/get/partyid/{id}** - get Likes for the Party with specified id (GET)
 - **/likes/insert** - put Like object (POST)<br />
 - **/likes/insert/array** - put Like objects array (POST)<br />
 - **/likes/delete** - remove Like by its object (DELETE)<br />
